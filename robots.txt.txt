@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Host: www.numerolog.su
+Sitemap: https://numerolog.su/sitemap.xml

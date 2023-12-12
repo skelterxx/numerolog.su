@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:ital,wght@0,300;0,500;1,300;1,400&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+	--index: calc(1vw + 1vh);
+	--gutter: 30px;
+	--side-small: 50;
+	--side-big: 50;
+	--depth: 5300px;
+	--transition: .75s cubic-bezier(.075, .5, 0, 1)
+}
+
+@font-face {
+	font-family: raleway_c;
+	src: url(canis\ minor.otf);
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: rounds;
+	src: url(Rounds\ Black.otf);
+	font-weight: 100;
+}
+
+#preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	z-index: 9999;
+  }
+  
+  #preloader img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	animation: fadeOut 6s;
+  }
+
+  @keyframes fadeOut {
+	0% { opacity: 1; }
+	100% { opacity: 0; }
+  }
+
+
+body {
+	scrollbar-width: none; /* Firefox */
+}
+body::-webkit-scrollbar { 
+	display: none; /* Safari and Chrome */
+}
+
+body {
+	background-color: #000;
+	color: #e7ffe3;
+	font-size: calc(var(--index) * .8);
+	font-family: raleway_c, sans-serif, bold;
+	line-height: 1.75;
+	height: var(--depth);
+	font-weight: 300;
+}
+.container {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	perspective: 1500px;
+}
+.gallery {
+	transform-style: preserve-3d;
+	height: 100%;
+}
+.frame {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: var(--transition), opacity .75s ease;
+	will-change: transform;
+	transform-style: preserve-3d;
+}
+
+.frame__last {
+	height: 50%;
+}
+
+h2 {
+	width: min-content;
+	line-height: 1;
+	margin: 100px 0 0;
+}
+
+h3 {
+	width: min-content;
+	line-height: 1;
+}
+
+h4{
+	line-height: 1.5;
+	margin: 10px 5px 10px;
+}
+
+.frame h2 {
+	text-align: center;
+	font-size: calc(var(--index) * 3.3);
+}
+.frame-media {
+	position: relative;
+	bottom: 16rem;
+	width: calc(var(--index) * var(--side-small));
+	height: calc(var(--index) * var(--side-big));
+	background-size: 100%;
+}
+.frame-media_left {
+	right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+.frame-media_right {
+	left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+.frame_bg {
+	background-color: rgba(0, 0, 0, 0.85);
+}
+
+.text-right > * {
+	position: relative;
+	left: 18vw;
+	text-align: left;
+}
+.text-left > * {
+	position: relative;
+	right: 18vw;
+	text-align: left;
+}
+
+.text-left img {
+	transform: rotate(180deg);
+	height: 5rem;
+}
+
+.text-right img {
+
+	height: 5rem;
+}
+
+.text-left a {
+	height: 5rem;
+	position: absolute;
+	left: 20rem;
+}
+
+.text-right a {
+	height: 5rem;
+	position: absolute;
+	left: -12rem;
+}
+
+.frame h3 {
+	font-size: calc(var(--index) * 3);
+}
+
+.frame p {
+	font-family: 'Comfortaa', sans-serif;
+	font-size: 15px;
+	letter-spacing: 2px;
+	max-width: 40vw;
+	margin-top: 3vh;
+}
+
+a {
+	font-family: rounds;
+	text-decoration: none;
+	color: #e7ffe3;
+}
+/*////////////////////////////////
+////////////////////////////////*/
+html {
+  scroll-behavior: smooth;
+}
+
+.button {
+  position: fixed; 
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  animation: move 2s infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0); 
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+/*////////////////////////////////
+////////////////////////////////*/
+
+	@media only screen and (max-width: 600px) {
+		.container {
+			perspective: 2200px;
+		}
+		.frame {
+			height: 70%;
+			align-items: flex-end;
+		}
+	
+		.frame-media_left {
+			right: calc(var(--side-small) + var(--gutter) / 2 * var(--index));
+		}
+		.frame-media_right {
+			left: calc(var(--side-small) + var(--gutter) / 2 * var(--index));
+		}
+		
+		.text-right > * {
+			position: relative;
+			top: 5rem;
+			left: 0vw;
+			text-align: left;
+		}
+		.text-left > * {
+			position: relative;
+			top: 5rem;
+			right: -3vw;
+			text-align: left;
+		}
+		
+		.text-left img {
+			transform: rotate(180deg);
+			height: 5rem;
+		}
+		
+		.text-right img {
+		
+			height: 5rem;
+		}
+		
+		.text-left a {
+			height: 5rem;
+			position: absolute;
+			left: 20rem;
+		}
+		
+		.text-right a {
+			height: 5rem;
+			position: absolute;
+			left: -12rem;
+		}
+		
+		h2 {
+			background-color: black;
+			line-height: 2;
+			padding: 16px
+		}
+		.frame h3 {
+			font-size: calc(var(--index) * 3);
+		}
+		.frame p {
+			max-width: 60vw;
+			margin-top: 3vh;	
+		}
+	}
