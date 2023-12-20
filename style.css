@@ -89,15 +89,16 @@ body {
 
 .frame__last {
 	height: 50%;
+	
 }
 
-h2 {
+h1 {
 	width: min-content;
 	line-height: 1;
 	margin: 100px 0 0;
 }
 
-h3 {
+h2 {
 	width: min-content;
 	line-height: 1;
 }
@@ -107,7 +108,7 @@ h4{
 	margin: 10px 5px 10px;
 }
 
-.frame h2 {
+.frame h1 {
 	text-align: center;
 	font-size: calc(var(--index) * 3.3);
 }
@@ -139,29 +140,7 @@ h4{
 	text-align: left;
 }
 
-.text-left img {
-	transform: rotate(180deg);
-	height: 5rem;
-}
-
-.text-right img {
-
-	height: 5rem;
-}
-
-.text-left a {
-	height: 5rem;
-	position: absolute;
-	left: 20rem;
-}
-
-.text-right a {
-	height: 5rem;
-	position: absolute;
-	left: -12rem;
-}
-
-.frame h3 {
+.frame h2 {
 	font-size: calc(var(--index) * 3);
 }
 
@@ -178,32 +157,27 @@ a {
 	text-decoration: none;
 	color: #e7ffe3;
 }
-/*////////////////////////////////
-////////////////////////////////*/
-html {
-  scroll-behavior: smooth;
-}
 
-.button {
-  position: fixed; 
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  animation: move 2s infinite;
+.arrow__dowm {
+	max-height: 1.5rem;
+	position: absolute; 
+	bottom: 10rem;
+    right: 10rem;
+    animation: move 2s infinite;
 }
 
 @keyframes move {
   0% {
     transform: translateY(0); 
   }
-  100% {
-    transform: translateY(20px);
+  50% {
+    transform: translateY(10px);
+  }
+	100% {
+    transform: translateY(0);
   }
 }
 
-/*////////////////////////////////
-////////////////////////////////*/
 
 	@media only screen and (max-width: 600px) {
 		.container {
@@ -234,38 +208,24 @@ html {
 			text-align: left;
 		}
 		
-		.text-left img {
-			transform: rotate(180deg);
-			height: 5rem;
-		}
-		
-		.text-right img {
-		
-			height: 5rem;
-		}
-		
-		.text-left a {
-			height: 5rem;
-			position: absolute;
-			left: 20rem;
-		}
-		
-		.text-right a {
-			height: 5rem;
-			position: absolute;
-			left: -12rem;
-		}
-		
-		h2 {
+		h1 {
 			background-color: black;
 			line-height: 2;
 			padding: 16px
 		}
-		.frame h3 {
+		.frame h2 {
 			font-size: calc(var(--index) * 3);
 		}
 		.frame p {
 			max-width: 60vw;
 			margin-top: 3vh;	
 		}
+		
+		.arrow__dowm {
+			position: absolute; 
+			top: 120%;
+			right: 10%;
+			animation: move 2s infinite;
+		}
+
 	}
